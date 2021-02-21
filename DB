@@ -1,25 +1,25 @@
 #!/bin/bash
-# JohnFordTV's VPN Premium Script
-# © Github.com/johndesu090
-# Official Repository: https://github.com/johndesu090/AutoScriptDB
-# For Updates, Suggestions, and Bug Reports, Join to my Messenger Groupchat(VPS Owners): https://m.me/join/AbbHxIHfrY9SmoBO
+# MIKAVPN Premium Script
+# © Github.com/toheri
+# Official Repository: https://github.com/toheri/AutoScriptDB
+# For Updates, Suggestions, and Bug Reports, Join to my Messenger Groupchat(VPS Owners): -
 # For Donations, Im accepting prepaid loads or GCash transactions:
-# Smart: 09206200840
-# Facebook: https://fb.me/johndesu090
+# Smart: 081285970456
+# Facebook: https://fb.me/toheri
 # Thanks for using this script, Enjoy Highspeed OpenVPN Service
 
 #############################
 #############################
 # Variables (Can be changed depends on your preferred values)
 # Script name
-MyScriptName='JohnFordTV-Premium Script'
+MyScriptName=' MIKAVPN-Premium Script'
 
 # OpenSSH Ports
 SSH_Port1='22'
 SSH_Port2='226'
 
 # Your SSH Banner
-SSH_Banner='https://raw.githubusercontent.com/johndesu090/AutoScriptDB/master/Files/Plugins/banner'
+SSH_Banner='https://raw.githubusercontent.com/toheri/AutoScriptDB/master/Files/Plugins/banner'
 
 # Dropbear Ports
 Dropbear_Port1='445'
@@ -46,7 +46,7 @@ Squid_Port3='60000'
 OvpnDownload_Port='85' # Before changing this value, please read this document. It contains all unsafe ports for Google Chrome Browser, please read from line #23 to line #89: https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
 
 # Server local time
-MyVPS_Time='Asia/Manila'
+MyVPS_Time='Asia/jakarta'
 #############################
 
 
@@ -97,7 +97,7 @@ function InstUpdates(){
 function InstWebmin(){
  # Download the webmin .deb package
  # You may change its webmin version depends on the link you've loaded in this variable(.deb file only, do not load .zip or .tar.gz file):
- WebminFile='https://github.com/johndesu090/AutoScriptDB/raw/master/Files/Plugins/webmin_1.920_all.deb'
+ WebminFile='https://github.com/toheri/AutoScriptDB/raw/master/Files/Plugins/webmin_1.920_all.deb'
  wget -qO webmin.deb "$WebminFile"
  
  # Installing .deb package for webmin

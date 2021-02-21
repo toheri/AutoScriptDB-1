@@ -723,9 +723,9 @@ myNginxC
  # Now creating all of our OpenVPN Configs 
 
 cat <<EOF15> /var/www/openvpn/gtmsnswnp.ovpn
-# JohnFordTV's VPN Premium Script
+# Mikavpn VPN Premium Script
 # © Github.com/toheri
-# Official Repository: https://github.com/toheri/AutoScriptDB
+# Official Repository: https://github.com/tohri/AutoScriptDB
 # For Updates, Suggestions, and Bug Reports, Join to my Messenger Groupchat(VPS Owners): -
 # For Donations, Im accepting prepaid loads or GCash transactions:
 # Smart: 081285970456
@@ -1088,7 +1088,7 @@ EOFSH
  rm -rf /etc/sysctl.d/99*
 
  # Setting our startup script to run every machine boots 
- cat <<'FordServ' > /etc/systemd/system/johnfordtv.service
+ cat <<'FordServ' > /etc/systemd/system/toheri.service
 [Unit]
 Description=toheri Startup Script
 Before=network-online.target
@@ -1102,10 +1102,10 @@ RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target
 FordServ
- chmod +x /etc/systemd/system/johnfordtv.service
+ chmod +x /etc/systemd/system/toheri.service
  systemctl daemon-reload
- systemctl start johnfordtv
- systemctl enable johnfordtv &> /dev/null
+ systemctl start toheri
+ systemctl enable toheri &> /dev/null
  systemctl enable fail2ban &> /dev/null
  systemctl start fail2ban &> /dev/null
 
@@ -1123,7 +1123,7 @@ echo -e " Creating Menu scripts.."
 
 cd /usr/local/sbin/
 rm -rf {accounts,base-ports,base-ports-wc,base-script,bench-network,clearcache,connections,create,create_random,create_trial,delete_expired,diagnose,edit_dropbear,edit_openssh,edit_openvpn,edit_ports,edit_squid3,edit_stunnel4,locked_list,menu,options,ram,reboot_sys,reboot_sys_auto,restart_services,server,set_multilogin_autokill,set_multilogin_autokill_lib,show_ports,speedtest,user_delete,user_details,user_details_lib,user_extend,user_list,user_lock,user_unlock}
-wget -q 'https://github.com/johndesu090/AutoScriptDB/raw/master/Files/Menu/bashmenu.zip'
+wget -q 'https://github.com/toheri/AutoScriptDB/raw/master/Files/Menu/bashmenu.zip'
 unzip -qq bashmenu.zip
 rm -f bashmenu.zip
 chmod +x ./*
@@ -1136,17 +1136,17 @@ cd ~
 function ScriptMessage(){
  echo -e " [\e[1;32m$MyScriptName VPS Installer\e[0m]"
  echo -e ""
- echo -e " https://fb.com/johndesu090"
- echo -e "[GCASH] 09206200840 [PAYPAL] johnford090@gmail.com"
+ echo -e " https://fb.com/toheri"
+ echo -e "[GCASH] 081285970456[PAYPAL] vfitriah97@gmail.com"
  echo -e ""
 }
 
 function InstBadVPN(){
  # Pull BadVPN Binary 64bit or 32bit
 if [ "$(getconf LONG_BIT)" == "64" ]; then
- wget -O /usr/bin/badvpn-udpgw "https://github.com/johndesu090/AutoScriptDB/raw/master/Files/Plugins/badvpn-udpgw64"
+ wget -O /usr/bin/badvpn-udpgw "https://github.com/toheri/AutoScriptDB/raw/master/Files/Plugins/badvpn-udpgw64"
 else
- wget -O /usr/bin/badvpn-udpgw "https://github.com/johndesu090/AutoScriptDB/raw/master/Files/Plugins/badvpn-udpgw"
+ wget -O /usr/bin/badvpn-udpgw "https://github.com/toheri/AutoScriptDB/raw/master/Files/Plugins/badvpn-udpgw"
 fi
  # Set BadVPN to Start on Boot via .profile
  sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /root/.profile
@@ -1247,7 +1247,7 @@ fi
  cd ~
  
   # Running screenfetch
- wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/johndesu090/AutoScriptDB/master/Files/Plugins/screenfetch"
+ wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/toheri/AutoScriptDB/master/Files/Plugins/screenfetch"
  chmod +x /usr/bin/screenfetch
  echo "/bin/bash /etc/openvpn/openvpn.bash" >> .profile
  echo "clear" >> .profile
@@ -1262,11 +1262,11 @@ echo " "
 echo "Installation has been completed!!"
 echo "--------------------------------------------------------------------------------"
 echo "                            Debian Premium Script                               "
-echo "                                 -FordSenpai-                                   "
+echo "                                 -MIKAVPN-                                   "
 echo "--------------------------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
 echo "Server Information"  | tee -a log-install.txt
-echo "   - Timezone    : Asia/Manila (GMT +8)"  | tee -a log-install.txt
+echo "   - Timezone    : Asia/jakarta (GMT +8)"  | tee -a log-install.txt
 echo "   - Fail2Ban    : [ON]"  | tee -a log-install.txt
 echo "   - IPtables    : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot : [ON]"  | tee -a log-install.txt
@@ -1294,10 +1294,10 @@ echo ""  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "OpenVPN Configs Download"  | tee -a log-install.txt
 echo "   - Download Link           : http://$IPADDR:85/configs.zip"  | tee -a log-install.txt
-echo " ©JohnFordTV"  | tee -a log-install.txt
-echo " Facebook: https://fb.me/johndesu090"  | tee -a log-install.txt
+echo " ©mikavpn"  | tee -a log-install.txt
+echo " Facebook: https://fb.me/toheri"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo " This script is under project of https://github.com/johndesu090/AutoScriptDB"  | tee -a log-install.txt
+echo " This script is under project of https://github.com/toheri/AutoScriptDB"  | tee -a log-install.txt
 echo " Please Reboot your VPS"
 
  # Clearing all logs from installation
